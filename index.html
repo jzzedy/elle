@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Elle</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0b2e, #3d2352, #693d7c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+            position: relative;
+            color: #ffebf7;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .name-container {
+            perspective: 1000px;
+            margin-bottom: 50px;
+        }
+
+        .elle-text {
+            font-size: 12rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ff9ecb, #ff7eb3, #ff65a3, #ff4d94, #ff3366);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            letter-spacing: -10px;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+            animation: float 4s ease-in-out infinite;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .elle-text span {
+            display: inline-block;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+        }
+
+        .elle-text span:nth-child(1) {
+            animation: bounce 1.5s ease infinite;
+        }
+
+        .elle-text span:nth-child(2) {
+            animation: bounce 1.5s ease 0.2s infinite;
+        }
+
+        .elle-text span:nth-child(3) {
+            animation: bounce 1.5s ease 0.4s infinite;
+        }
+
+        .elle-text span:nth-child(4) {
+            animation: bounce 1.5s ease 0.6s infinite;
+        }
+
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle-container {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .particle {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(45deg, #ff9ecb, #ff7eb3);
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ff65a3, 0 0 30px rgba(255, 101, 163, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .particle-container:hover .particle {
+            transform: scale(1.8);
+        }
+
+        .message {
+            position: absolute;
+            font-size: 1.4rem;
+            color: #ffebf7;
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.9);
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            animation: floatUp 2.5s ease-out forwards;
+            white-space: nowrap;
+            font-family: 'Dancing Script', cursive;
+            z-index: 20;
+        }
+
+        .score-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(29, 12, 47, 0.8);
+            border: 2px solid #ff65a3;
+            border-radius: 15px;
+            padding: 15px 25px;
+            color: #ffebf7;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(255, 101, 163, 0.4);
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .score-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ff7eb3;
+            margin-left: 10px;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3366;
+            transform: rotate(45deg);
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3366;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+
+            70% {
+                opacity: 1;
+                transform: translate(-50%, -150%) scale(1.1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -200%) scale(1.3);
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            color: rgba(255, 235, 247, 0.7);
+            font-size: 1.2rem;
+            text-align: center;
+            z-index: 10;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 60px;
+            color: rgba(255, 235, 247, 0.9);
+            font-size: 1.1rem;
+            text-align: center;
+            z-index: 10;
+            background: rgba(29, 12, 47, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            max-width: 90%;
+        }
+
+        @media (max-width: 768px) {
+            .elle-text {
+                font-size: 8rem;
+                letter-spacing: -7px;
+            }
+
+            .score-container {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            .score-value {
+                font-size: 1.8rem;
+            }
+
+            .message {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .elle-text {
+                font-size: 5rem;
+                letter-spacing: -5px;
+            }
+
+            .footer {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="name-container">
+            <h1 class="elle-text">
+                <span>E</span>
+                <span>l</span>
+                <span>l</span>
+                <span>e</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="score-container">
+        Score: <span class="score-value">0</span>
+    </div>
+
+    <div class="instructions">
+        Click on the floating dots to reveal messages
+    </div>
+
+    <div id="particles-container"></div>
+
+    <div class="footer">
+        Made for Elle
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles-container');
+            const scoreValue = document.querySelector('.score-value');
+            let score = 0;
+
+            const messages = [
+                "I like you",
+                "The developer of this site likes you",
+                "Zed and Elle?",
+                "You're amazing",
+                "You light up my world",
+                "Thinking of you",
+                "You're special",
+                "My heart skips a beat",
+                "Can't stop smiling",
+                "You're beautiful inside and out",
+                "Meant to be?",
+                "My favorite thought",
+                "Adore you",
+                "You're my sunshine",
+                "Perfect match",
+                "You make me happy",
+                "Dreaming of you",
+                "So lucky to know you",
+                "You're incredible",
+                "My heart is yours",
+                "Your energy is magnetic",
+                "Being around you feels easy",
+                "You make ordinary moments special",
+                "Your perspective fascinates me",
+                "I appreciate your existence",
+                "The world needs more of your kindness",
+                "You have a beautiful mind",
+                "Your presence is comforting",
+                "You inspire me to be better",
+                "I value our connection",
+                "You understand things deeply",
+                "Your authenticity is refreshing",
+                "I enjoy how your mind works",
+                "You make people feel seen",
+                "Your laughter is contagious"
+            ];
+
+            createParticles(25);
+
+            createHearts(30);
+
+            function createParticles(count) {
+                for (let i = 0; i < count; i++) {
+                    createParticle();
+                }
+            }
+
+            function createParticle() {
+                const container = document.createElement('div');
+                container.classList.add('particle-container');
+
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                container.appendChild(particle);
+
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+
+                container.style.left = `${x}px`;
+                container.style.top = `${y}px`;
+
+                const size = 15 + Math.random() * 10;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                const speedX = (Math.random() - 0.5) * 3;
+                const speedY = (Math.random() - 0.5) * 3;
+
+                container.addEventListener('click', () => {
+                    particle.style.transition = 'all 0.8s ease';
+                    particle.style.transform = 'scale(0)';
+                    particle.style.opacity = '0';
+
+                    showMessage(x, y);
+
+                    score++;
+                    scoreValue.textContent = score;
+
+                    setTimeout(() => {
+                        container.remove();
+                        createParticle();
+                    }, 800);
+                });
+
+                particlesContainer.appendChild(container);
+
+                animateParticle(container, speedX, speedY);
+            }
+
+            function animateParticle(container, speedX, speedY) {
+                let x = parseFloat(container.style.left);
+                let y = parseFloat(container.style.top);
+                let directionX = speedX;
+                let directionY = speedY;
+
+                function move() {
+                    x += directionX;
+                    y += directionY;
+
+                    // Bounce off edges
+                    if (x <= 0 || x >= window.innerWidth - 60) {
+                        directionX *= -1;
+                        x = x <= 0 ? 0 : window.innerWidth - 60;
+                    }
+
+                    if (y <= 0 || y >= window.innerHeight - 60) {
+                        directionY *= -1;
+                        y = y <= 0 ? 0 : window.innerHeight - 60;
+                    }
+
+                    container.style.left = `${x}px`;
+                    container.style.top = `${y}px`;
+
+                    requestAnimationFrame(move);
+                }
+
+                move();
+            }
+
+            function showMessage(x, y) {
+                const message = document.createElement('div');
+                message.classList.add('message');
+
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                message.textContent = randomMessage;
+
+                message.style.left = `${x}px`;
+                message.style.top = `${y}px`;
+
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    message.remove();
+                }, 2500);
+            }
+
+            function createHearts(count) {
+                for (let i = 0; i < count; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+
+                    heart.style.left = `${x}px`;
+                    heart.style.top = `${y}px`;
+                    const size = 5 + Math.random() * 15;
+                    heart.style.width = `${size}px`;
+                    heart.style.height = `${size}px`;
+                    heart.style.opacity = 0.1 + Math.random() * 0.4;
+
+                    heart.style.animationDelay = `${Math.random() * 5}s`;
+
+                    particlesContainer.appendChild(heart);
+                }
+            }
+
+            window.addEventListener('resize', () => {
+
+                particlesContainer.innerHTML = '';
+                createParticles(25);
+                createHearts(30);
+            });
+        });
+    </script>
+</body>
+
+</html>
