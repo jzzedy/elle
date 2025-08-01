@@ -140,6 +140,104 @@
             text-shadow: 0 0 10px rgba(255, 126, 126, 0.5);
         }
 
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 11, 46, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .auth-container {
+            background: rgba(29, 12, 47, 0.9);
+            border: 2px solid #ff65a3;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 101, 163, 0.6);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .auth-title {
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: #ff7eb3;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+        }
+
+        .auth-question {
+            font-size: 1.3rem;
+            color: #ffebf7;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #ff65a3;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffebf7;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .auth-input::placeholder {
+            color: rgba(255, 235, 247, 0.6);
+        }
+
+        .auth-input:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 101, 163, 0.5);
+        }
+
+        .auth-button {
+            background: linear-gradient(45deg, #ff65a3, #ff7eb3);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(255, 101, 163, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 101, 163, 0.6);
+        }
+
+        .auth-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-family: 'Dancing Script', cursive;
+            min-height: 30px;
+        }
+
+        .success {
+            color: #7eff7e;
+            text-shadow: 0 0 10px rgba(126, 255, 126, 0.5);
+        }
+
+        .error {
+            color: #ff7e7e;
+            text-shadow: 0 0 10px rgba(255, 126, 126, 0.5);
+        }
+
         .container {
             text-align: center;
             z-index: 10;
@@ -431,6 +529,35 @@
             font-size: 24px;
             color: #ff7eb3;
         }
+        
+        .music-control {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(29, 12, 47, 0.8);
+            border: 2px solid #ff65a3;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 0 20px rgba(255, 101, 163, 0.4);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            background: rgba(69, 22, 97, 0.9);
+        }
+        
+        .music-icon {
+            font-size: 24px;
+            color: #ff7eb3;
+        }
 
         .heart {
             position: absolute;
@@ -462,6 +589,8 @@
             left: -10px;
         }
 
+<<<<<<< HEAD:index.html
+=======
         .burst {
             position: absolute;
             width: 20px;
@@ -575,6 +704,7 @@
             }
         }
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(0);
@@ -606,6 +736,11 @@
                 opacity: 0;
                 transform: translate(-50%, -200%) scale(1.3);
             }
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.7); }
+            100% { text-shadow: 0 0 25px rgba(255, 105, 180, 0.9), 0 0 50px rgba(255, 105, 180, 0.5); }
         }
 
         @keyframes glow {
@@ -669,10 +804,13 @@
             max-width: 90%;
         }
 
+<<<<<<< HEAD:index.html
+=======
         .instructions b {
             color: #ffd700;
         }
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         .welcome-message {
             position: fixed;
             top: 50%;
@@ -689,6 +827,11 @@
         }
 
         @keyframes welcomeFade {
+<<<<<<< HEAD:index.html
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            20%, 80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+=======
             0% {
                 opacity: 0;
                 transform: translate(-50%, -50%) scale(0.5);
@@ -731,6 +874,7 @@
         .particle-info-text {
             font-size: 0.9rem;
             color: #ffebf7;
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         }
 
         @media (max-width: 768px) {
@@ -763,10 +907,13 @@
             .auth-question {
                 font-size: 1.1rem;
             }
+<<<<<<< HEAD:index.html
+=======
             
             .combo-container {
                 font-size: 3rem;
             }
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         }
 
         @media (max-width: 480px) {
@@ -790,6 +937,8 @@
             .auth-question {
                 font-size: 1rem;
             }
+<<<<<<< HEAD:index.html
+=======
             
             .combo-container {
                 font-size: 2rem;
@@ -799,6 +948,7 @@
                 bottom: 100px;
                 gap: 10px;
             }
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         }
     </style>
 </head>
@@ -871,9 +1021,17 @@
             <span class="particle-info-text">Special</span>
         </div>
     </div>
+    
+    <div class="music-control" id="musicControl">
+        <div class="music-icon">🔊</div>
+    </div>
 
     <div class="instructions">
+<<<<<<< HEAD:index.html
+        Click on the floating dots to play • Click 🔊/🔇 to toggle sound
+=======
         Click on the floating dots to play • <b>Click red dots to avoid penalties</b> • Click 🔊/🔇 to toggle sound
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
     </div>
 
     <div id="particles-container"></div>
@@ -882,6 +1040,32 @@
 
     <div class="footer">
         Made with ♥ for Elle
+<<<<<<< HEAD:index.html
+    </div>
+
+    <script>
+        // Audio context for sound effects
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        let isMuted = false;
+        let isElle = false;
+
+        // Create game sound effect
+        function createBeepSound(frequency = 800, duration = 0.1, type = 'sine') {
+            if (isMuted) return;
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            oscillator.type = type;
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+=======
     </div>
     
     <div class="game-over" id="gameOver">
@@ -924,10 +1108,20 @@
             gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
             gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
             oscillator.start(audioContext.currentTime);
             oscillator.stop(audioContext.currentTime + duration);
         }
 
+<<<<<<< HEAD:index.html
+        // Create success sound
+        function createSuccessSound() {
+            if (isMuted) return;
+            
+            setTimeout(() => createBeepSound(523, 0.15), 0);    // C
+            setTimeout(() => createBeepSound(659, 0.15), 150);  // E
+            setTimeout(() => createBeepSound(784, 0.2), 300);   // G
+=======
         function createSuccessSound() {
             if (isMuted) return;
 
@@ -958,6 +1152,7 @@
             setTimeout(() => createBeepSound(1174, 0.1, 'square'), 100);
             setTimeout(() => createBeepSound(1568, 0.1, 'square'), 200);
             setTimeout(() => createBeepSound(2093, 0.1, 'square'), 300);
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -967,6 +1162,9 @@
             const authMessage = document.getElementById('authMessage');
             const particlesContainer = document.getElementById('particles-container');
             const scoreValue = document.querySelector('.score-value');
+<<<<<<< HEAD:index.html
+            const musicControl = document.getElementById('musicControl');
+=======
             const levelValue = document.querySelector('.level-value');
             const reactionTimeSpan = document.querySelector('.reaction-time');
             const comboValue = document.querySelector('.combo-value');
@@ -976,10 +1174,14 @@
             const gameOverScreen = document.getElementById('gameOver');
             const finalScore = document.getElementById('finalScore');
             const restartButton = document.getElementById('restartButton');
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
             let score = 0;
             let lastReactionTime = 0;
             let level = 1;
 
+<<<<<<< HEAD:index.html
+            // Handle authentication
+=======
             function startGame() {
                 gameActive = true;
                 timeLeft = 60;
@@ -1054,6 +1256,7 @@
                 }, 1000);
             }
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
             function checkDate() {
                 const userInput = dateInput.value.trim().toLowerCase();
                 const correctAnswers = [
@@ -1072,25 +1275,39 @@
                     authMessage.innerHTML = '✨ Hi Elle, Zed built this site for you ✨';
                     authMessage.className = 'auth-message success';
                     createSuccessSound();
+<<<<<<< HEAD:index.html
+                    
+=======
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                     setTimeout(() => {
                         authOverlay.style.opacity = '0';
                         setTimeout(() => {
                             authOverlay.style.display = 'none';
                             showWelcomeMessage();
+<<<<<<< HEAD:index.html
+=======
                             startGame();
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                         }, 500);
                     }, 2000);
                 } else {
                     isElle = false;
                     authMessage.innerHTML = "You're not Elle, but you can still play!";
                     authMessage.className = 'auth-message error';
+<<<<<<< HEAD:index.html
+                    
+=======
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                     setTimeout(() => {
                         authOverlay.style.opacity = '0';
                         setTimeout(() => {
                             authOverlay.style.display = 'none';
+<<<<<<< HEAD:index.html
+=======
                             startGame();
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                         }, 500);
                     }, 2000);
                 }
@@ -1101,7 +1318,11 @@
                 welcomeDiv.className = 'welcome-message';
                 welcomeDiv.innerHTML = 'Hi Elle, Zed built this site for you';
                 document.body.appendChild(welcomeDiv);
+<<<<<<< HEAD:index.html
+                
+=======
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                 setTimeout(() => {
                     welcomeDiv.remove();
                 }, 4000);
@@ -1113,6 +1334,17 @@
                     checkDate();
                 }
             });
+<<<<<<< HEAD:index.html
+
+            // Music control
+            musicControl.addEventListener('click', () => {
+                isMuted = !isMuted;
+                musicControl.innerHTML = isMuted ? 
+                    '<div class="music-icon">🔇</div>' : 
+                    '<div class="music-icon">🔊</div>';
+                
+                // Resume audio context if needed
+=======
             
             restartButton.addEventListener('click', restartGame);
 
@@ -1123,6 +1355,7 @@
                     '<div class="music-icon">🔇</div>' :
                     '<div class="music-icon">🔊</div>';
 
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                 if (audioContext.state === 'suspended') {
                     audioContext.resume();
                 }
@@ -1178,6 +1411,11 @@
                 "Way to go!",
                 "Fantastic!"
             ];
+<<<<<<< HEAD:index.html
+
+            createParticles(25);
+            createHearts(30);
+=======
             
             const powerMessages = [
                 "Power up!",
@@ -1198,6 +1436,7 @@
                 "Amazing!",
                 "Unbelievable!"
             ];
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
 
             function createParticles(count) {
                 for (let i = 0; i < count; i++) {
@@ -1276,6 +1515,17 @@
                     particle.style.transform = 'scale(0)';
                     particle.style.opacity = '0';
 
+<<<<<<< HEAD:index.html
+                    // Play sound effect
+                    createBeepSound(800 + Math.random() * 400, 0.1, 'triangle');
+
+                    // Show appropriate message
+                    if (isElle) {
+                        showMessage(x, y, sweetMessages);
+                    } else {
+                        showMessage(x, y, genericMessages);
+                    }
+=======
                     if (isNegative) {
                         score = Math.max(0, score - 1);
                         createPenaltySound();
@@ -1315,6 +1565,7 @@
                     
                     updateScore();
                     updateLevel();
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
 
                     const themeIndex = (Math.floor(level / 2) % 3) + 1;
                     const elleText = document.querySelector('.elle-text');
@@ -1392,7 +1643,11 @@
                 move();
             }
 
+<<<<<<< HEAD:index.html
+            function showMessage(x, y, messageArray) {
+=======
             function showMessage(x, y, messageArray, type) {
+>>>>>>> 13a8fd2 (v1.3):elle/index.html
                 const message = document.createElement('div');
                 message.classList.add('message');
                 if (type === 'negative') {
